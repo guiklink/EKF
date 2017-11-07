@@ -64,6 +64,13 @@ public:
    */
   void UpdateEKF(const Eigen::VectorXd &z);
 
+private:
+
+  /**
+   * Function h(x') that converts cartesian coordinates to polar
+   */
+  Eigen::VectorXd h(const Eigen::VectorXd &cart);
+  void NormalizePhi(Eigen::VectorXd &polar_coord);
 };
 
 #endif /* KALMAN_FILTER_H_ */

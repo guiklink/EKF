@@ -36,9 +36,9 @@ FusionEKF::FusionEKF() {
               0, 0.01;
 
   //measurement covariance matrix - radar
-  R_radar_ << 10, 0, 0,
-              0, 10, 0,
-              0, 0, 10;
+  R_radar_ << 0.09, 0, 0,
+              0, 0.0009, 0,
+              0, 0, 0.09;
 
   /**
   TODO:
