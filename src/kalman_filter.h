@@ -70,6 +70,10 @@ private:
    * Function h(x') that converts cartesian coordinates to polar
    */
   Eigen::VectorXd h(const Eigen::VectorXd &cart);
+
+  /**
+   * Normalize this PHI value from the vector angle within a value from PI to -PI
+   */
   void NormalizePhi(Eigen::VectorXd &polar_coord);
 };
 

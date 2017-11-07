@@ -5,7 +5,7 @@
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
-// Please note that the Eigen library does not initialize 
+// The Eigen library does not initialize 
 // VectorXd or MatrixXd objects with zeros upon creation.
 
 KalmanFilter::KalmanFilter() {}
@@ -71,12 +71,15 @@ VectorXd KalmanFilter::h(const VectorXd &cart){
   float rho = sqrt(px * px + py * py);
 
   float phi;
+
+  // Test to make sure there will be no division by 0
   if (fabs(px) < 0.0001 )
     phi = 0.0;
   else
     phi = atan2(py, px);
 
   float rho_dot;
+  // Test to make sure there will be no division by 0
   if (fabs(rho) < 0.0001 )
     rho_dot = 0.0;
   else
